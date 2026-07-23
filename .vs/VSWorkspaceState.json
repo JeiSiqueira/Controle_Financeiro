@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\backend",
+    "\\backend\\Controle_Financeiro.API\\obj\\Release",
+    "\\backend\\Controle_Financeiro.Application\\obj",
+    "\\backend\\Controle_Financeiro.Domain",
+    "\\backend\\Controle_Financeiro.Domain\\Entities",
+    "\\backend\\Controle_Financeiro.Domain\\obj\\Release\\net10.0\\ref",
+    "\\backend\\Controle_Financeiro.Infrastructure\\Data",
+    "\\frontend",
+    "\\README.md"
+  ],
+  "SelectedNode": "\\backend\\Controle_Financeiro.Domain\\Entities\\Categoria.cs",
+  "PreviewInSolutionExplorer": false
+}

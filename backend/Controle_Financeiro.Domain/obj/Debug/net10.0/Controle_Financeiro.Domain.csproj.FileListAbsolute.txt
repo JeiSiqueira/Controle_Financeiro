@@ -1,0 +1,11 @@
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\bin\Debug\net10.0\Controle_Financeiro.Domain.deps.json
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\bin\Debug\net10.0\Controle_Financeiro.Domain.dll
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\bin\Debug\net10.0\Controle_Financeiro.Domain.pdb
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\Controle_Financeiro.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\Controle_Financeiro.Domain.AssemblyInfoInputs.cache
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\Controle_Financeiro.Domain.AssemblyInfo.cs
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\Controle_Financeiro.Domain.csproj.CoreCompileInputs.cache
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\Controle_Financeiro.Domain.dll
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\refint\Controle_Financeiro.Domain.dll
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\Controle_Financeiro.Domain.pdb
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\ref\Controle_Financeiro.Domain.dll

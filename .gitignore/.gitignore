@@ -1,0 +1,20 @@
+# Visual Studio
+.vs/
+**/.vs/
+
+# Build
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Logs
+*.log
+
+# Banco local
+*.db
+*.sqlite
+
+# User files
+*.user
+*.suo

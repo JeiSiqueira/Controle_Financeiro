@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.gitignore",
+    "\\Controle_Financeiro.API",
+    "\\Controle_Financeiro.API\\Controllers",
+    "\\Controle_Financeiro.API\\Controllers\\DTOs",
+    "\\Controle_Financeiro.API\\Controllers\\DTOs\\Categoria",
+    "\\Controle_Financeiro.API\\Controllers\\DTOs\\Categoria\\Services",
+    "\\Controle_Financeiro.Domain\\Entities"
+  ],
+  "SelectedNode": "\\Controle_Financeiro.API\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}
