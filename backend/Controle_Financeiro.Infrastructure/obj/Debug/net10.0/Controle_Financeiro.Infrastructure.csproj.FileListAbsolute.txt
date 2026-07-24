@@ -9,6 +9,7 @@ C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backe
 C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Infrastructure\obj\Debug\net10.0\Controle_Financeiro.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Infrastructure\obj\Debug\net10.0\Controle_Financeiro.Infrastructure.AssemblyInfo.cs
 C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Infrastructure\obj\Debug\net10.0\Controle_Financeiro.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Infrastructure\obj\Debug\net10.0\Controle_Financeiro.Infrastructure.sourcelink.json
 C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Infrastructure\obj\Debug\net10.0\Controle.F3C22CC4.Up2Date
 C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Infrastructure\obj\Debug\net10.0\Controle_Financeiro.Infrastructure.dll
 C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Infrastructure\obj\Debug\net10.0\refint\Controle_Financeiro.Infrastructure.dll

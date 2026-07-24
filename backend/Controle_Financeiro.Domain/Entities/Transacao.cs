@@ -13,7 +13,10 @@ public class Transacao
 
     public string Tipo { get; set; } = string.Empty;
 
+    // FK
     public int CategoriaId { get; set; }
 
-    public Categoria? Categoria { get; set; } 
+
+    // Navegação
+    public Categoria? Categoria { get; set; }
 }

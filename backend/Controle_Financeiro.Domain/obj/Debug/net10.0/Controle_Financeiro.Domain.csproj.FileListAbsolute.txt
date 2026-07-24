@@ -5,6 +5,7 @@ C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backe
 C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\Controle_Financeiro.Domain.AssemblyInfoInputs.cache
 C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\Controle_Financeiro.Domain.AssemblyInfo.cs
 C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\Controle_Financeiro.Domain.csproj.CoreCompileInputs.cache
+C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\Controle_Financeiro.Domain.sourcelink.json
 C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\Controle_Financeiro.Domain.dll
 C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\refint\Controle_Financeiro.Domain.dll
 C:\Users\jeisi\OneDrive\Documentos\Jeimili\PORTIFÓLIO\Controle_Financeiro\backend\Controle_Financeiro.Domain\obj\Debug\net10.0\Controle_Financeiro.Domain.pdb
