@@ -1,4 +1,4 @@
-# Controle Financeiro API
+# Controle Financeiro
 
 API para gerenciamento de receitas e despesas pessoais.
 
