@@ -1,6 +1,6 @@
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;Database=controle_financeiro;User=root;Password=SUA_SENHA;"
+    "DefaultConnection": "Server=localhost;Port=3306;Database=controle_financeiro;User=root;Password=NovaSenha123!;"
   },
   "Logging": {
     "LogLevel": {

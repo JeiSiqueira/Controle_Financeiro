@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Controle_Financeiro.Infrastructure.Data;
 using Controle_Financeiro.Domain.Entities;
+using Controle_Financeiro.API.DTOs.Transacao;
 
 namespace Controle_Financeiro.API.Controllers;
 
@@ -9,29 +10,38 @@ namespace Controle_Financeiro.API.Controllers;
 [Route("api/[controller]")]
 public class TransacoesController : ControllerBase
 {
-    private readonly CategoriaService _service;
+    private readonly AppDbContext _context;
 
     public TransacoesController(AppDbContext context)
     {
         _context = context;
     }
 
-
     // GET: api/transacoes
+    // Mantivemos apenas a versão com DTO, que limpa a resposta da API
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Transacao>>> GetTransacoes()
+    public async Task<ActionResult<IEnumerable<TransacaoResponseDto>>> GetTransacoes()
     {
         var transacoes = await _context.Transacoes
             .Include(t => t.Categoria)
+            .Select(t => new TransacaoResponseDto
+            {
+                Id = t.Id,
+                Descricao = t.Descricao,
+                Valor = t.Valor,
+                Data = t.Data,
+                Tipo = t.Tipo,
+                CategoriaId = t.CategoriaId,
+                CategoriaNome = t.Categoria.Nome
+            })
             .ToListAsync();
 
         return Ok(transacoes);
     }
 
-
-    // GET: api/transacoes/1
+    // GET: api/transacoes/5
     [HttpGet("{id}")]
-    public async Task<ActionResult<Transacao>> GetTransacao(int id)
+    public async Task<ActionResult<TransacaoResponseDto>> GetTransacao(int id)
     {
         var transacao = await _context.Transacoes
             .Include(t => t.Categoria)
@@ -42,50 +52,101 @@ public class TransacoesController : ControllerBase
             return NotFound();
         }
 
-        return Ok(transacao);
-    }
+        var resposta = new TransacaoResponseDto
+        {
+            Id = transacao.Id,
+            Descricao = transacao.Descricao,
+            Valor = transacao.Valor,
+            Data = transacao.Data,
+            Tipo = transacao.Tipo,
+            CategoriaId = transacao.CategoriaId,
+            CategoriaNome = transacao.Categoria.Nome
+        };
 
+        return Ok(resposta);
+    }
 
     // POST: api/transacoes
     [HttpPost]
-    public async Task<ActionResult<Transacao>> CriarTransacao(Transacao transacao)
+    public async Task<ActionResult<TransacaoResponseDto>> CriarTransacao(TransacaoCreateDto dto)
     {
-        _context.Transacoes.Add(transacao);
+        var categoria = await _context.Categorias
+            .FirstOrDefaultAsync(c => c.Id == dto.CategoriaId);
 
+        if (categoria == null)
+        {
+            return BadRequest("Categoria não encontrada.");
+        }
+
+        var transacao = new Transacao
+        {
+            Descricao = dto.Descricao,
+            Valor = dto.Valor,
+            Data = dto.Data,
+            Tipo = dto.Tipo,
+            CategoriaId = dto.CategoriaId
+        };
+
+        _context.Transacoes.Add(transacao);
         await _context.SaveChangesAsync();
 
+        var resposta = new TransacaoResponseDto
+        {
+            Id = transacao.Id,
+            Descricao = transacao.Descricao,
+            Valor = transacao.Valor,
+            Data = transacao.Data,
+            Tipo = transacao.Tipo,
+            CategoriaId = transacao.CategoriaId,
+            CategoriaNome = categoria.Nome
+        };
+
         return CreatedAtAction(
-            nameof(GetTransacao),
+            nameof(GetTransacao), // Agora este método existe ali em cima!
             new { id = transacao.Id },
-            transacao
+            resposta
         );
     }
-
 
     // PUT: api/transacoes/1
     [HttpPut("{id}")]
     public async Task<IActionResult> AtualizarTransacao(
         int id,
-        Transacao transacao)
+        TransacaoUpdateDto dto)
     {
-        if (id != transacao.Id)
+        var transacao = await _context.Transacoes
+            .FindAsync(id);
+
+        if (transacao == null)
         {
-            return BadRequest();
+            return NotFound();
         }
 
-        _context.Entry(transacao).State = EntityState.Modified;
+        var categoriaExiste = await _context.Categorias
+            .AnyAsync(c => c.Id == dto.CategoriaId);
+
+        if (!categoriaExiste)
+        {
+            return BadRequest("Categoria não encontrada.");
+        }
+
+        transacao.Descricao = dto.Descricao;
+        transacao.Valor = dto.Valor;
+        transacao.Data = dto.Data;
+        transacao.Tipo = dto.Tipo;
+        transacao.CategoriaId = dto.CategoriaId;
 
         await _context.SaveChangesAsync();
 
         return NoContent();
     }
 
-
     // DELETE: api/transacoes/1
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletarTransacao(int id)
     {
-        var transacao = await _context.Transacoes.FindAsync(id);
+        var transacao = await _context.Transacoes
+            .FindAsync(id);
 
         if (transacao == null)
         {

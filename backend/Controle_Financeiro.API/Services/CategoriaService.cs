@@ -1,5 +1,4 @@
 using Controle_Financeiro.API.DTOs.Categoria;
-using Controle_Financeiro.Domain.Entities;
 using Controle_Financeiro.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 

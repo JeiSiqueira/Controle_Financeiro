@@ -12,16 +12,21 @@ public class CategoriasController : ControllerBase
 {
     private readonly AppDbContext _context;
 
-    public CategoriasController(CategoriaService service)
+    public CategoriasController(AppDbContext context)
     {
-        _service = service;
+        _context = context;
     }
-
     // GET: api/categorias
     [HttpGet]
     public async Task<ActionResult<IEnumerable<CategoriaResponseDto>>> GetCategorias()
     {
-        var categorias = await _service.ListarAsync();
+        var categorias = await _context.Categorias
+        .Select(c => new CategoriaResponseDto
+        {
+            Id = c.Id,
+            Nome = c.Nome
+        })
+        .ToListAsync();
 
         return Ok(categorias);
     }

@@ -14,5 +14,5 @@ public class TransacaoResponseDto
 
     public int CategoriaId { get; set; }
 
-    public string Categoria { get; set; } = string.Empty;
+    public string CategoriaNome { get; set; } = string.Empty;
 }
