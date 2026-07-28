@@ -1,17 +1,22 @@
 using Microsoft.EntityFrameworkCore;
 using Controle_Financeiro.Infrastructure.Data;
-using Controle_Financeiro.API.Services;
+using Controle_Financeiro.Application.Interfaces;
+using Controle_Financeiro.Infrastructure.Repositories;
+using Controle_Financeiro.Application.Services;
+using Controle_Financeiro.API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Serviços
 builder.Services.AddControllers();
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddOpenApi();
 
-builder.Services.AddScoped<CategoriaService>();
+builder.Services.AddScoped<ITransacaoRepository, TransacaoRepository>();
+builder.Services.AddScoped<ITransacaoService, TransacaoService>();
+builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
@@ -35,7 +40,9 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Middleware
+// Middleware de tratamento global de exceções
+app.UseMiddleware<ExceptionMiddleware>();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
