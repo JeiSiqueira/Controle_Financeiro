@@ -13,17 +13,15 @@ public class ExceptionMiddleware
         _next = next;
     }
 
-
     public async Task InvokeAsync(HttpContext context)
     {
         try
         {
             await _next(context);
         }
-        catch (RegraDeNegocioException ex)
+        catch (UnauthorizedAccessException ex)
         {
-            context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-
+            context.Response.StatusCode = (int)HttpStatusCode.Forbidden;
             context.Response.ContentType = "application/json";
 
             var response = new
@@ -35,15 +33,29 @@ public class ExceptionMiddleware
                 JsonSerializer.Serialize(response)
             );
         }
-        catch (Exception)
+        catch (RegraDeNegocioException ex)
         {
-            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-
+            context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
             context.Response.ContentType = "application/json";
 
             var response = new
             {
-                message = "Ocorreu um erro interno no servidor."
+                message = ex.Message
+            };
+
+            await context.Response.WriteAsync(
+                JsonSerializer.Serialize(response)
+            );
+        }
+        catch (Exception ex)
+        {
+            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            context.Response.ContentType = "application/json";
+
+            var response = new
+            {
+                message = ex.Message,
+                inner = ex.InnerException?.Message
             };
 
             await context.Response.WriteAsync(

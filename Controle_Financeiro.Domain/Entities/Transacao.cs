@@ -13,10 +13,20 @@ public class Transacao
 
     public string Tipo { get; set; } = string.Empty;
 
-    // FK
+
     public int CategoriaId { get; set; }
+
+    public Categoria Categoria { get; set; } = null!;
+
+
+    public int? UsuarioId { get; set; }
+
+    public Usuario? Usuario { get; set; } = null!;
+
+    // FK
+    // public int CategoriaId { get; set; }
 
 
     // Navegação
-    public Categoria? Categoria { get; set; }
+    // public Categoria? Categoria { get; set; }
 }

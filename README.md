@@ -1,93 +1,88 @@
-Controle Financeiro API
+# Controle Financeiro
 
-API REST desenvolvida em **C# e .NET 10** para gerenciamento de receitas e despesas.
+Aplicação web para gerenciamento de receitas, despesas e categorias.
 
-Este projeto foi criado com o objetivo de praticar conceitos de desenvolvimento backend, utilizando boas práticas como DTOs, Entity Framework Core e arquitetura em camadas.
+Projeto desenvolvido como parte do meu portfólio para aplicar na prática conhecimentos de desenvolvimento backend, frontend, APIs REST, autenticação, banco de dados e integração entre aplicações.
 
----
+## Sobre o projeto
 
-Tecnologias
+O Controle Financeiro permite que usuários gerenciem suas movimentações financeiras, cadastrando receitas e despesas, organizando transações por categorias e acompanhando um resumo financeiro através do dashboard.
+
+A aplicação possui autenticação de usuários utilizando JWT e integração entre uma API desenvolvida em C#/.NET e um frontend desenvolvido em React + TypeScript.
+
+## Funcionalidades
+
+- Cadastro de usuário
+- Login e autenticação com JWT
+- Proteção de rotas autenticadas
+- Cadastro de receitas e despesas
+- Listagem de transações
+- Edição de transações
+- Exclusão de transações
+- Cadastro de categorias
+- Prevenção de categorias duplicadas
+- Criação de categoria durante o cadastro de uma transação
+- Dashboard com receitas, despesas e saldo
+- Integração entre frontend e backend
+- Tratamento global de exceções na API
+
+## Tecnologias
+
+### Backend
 
 - C#
-- .NET 10
+- .NET 8
 - ASP.NET Core Web API
 - Entity Framework Core
 - MySQL
+- JWT
+- BCrypt
 - Swagger
-- Git e GitHub
+- Repository Pattern
+- DTOs
 
----
+### Frontend
 
-Estrutura do projeto
+- React
+- TypeScript
+- Vite
+- Axios
+- React Router
+- CSS
 
-```
-Controle_Financeiro
+### Ferramentas
+
+- Visual Studio
+- Visual Studio Code
+- Git
+- GitHub
+- Swagger
+
+## Arquitetura
+
+O backend foi organizado em camadas para separar as responsabilidades da aplicação.
+
+text
+backend/
 │
 ├── Controle_Financeiro.API
+│   ├── Controllers
+│   ├── Middleware
+│   └── Services
+│
 ├── Controle_Financeiro.Application
+│   ├── DTOs
+│   ├── Interfaces
+│   ├── Services
+│   └── Exceptions
+│
 ├── Controle_Financeiro.Domain
+│   └── Entities
+│
 ├── Controle_Financeiro.Infrastructure
+│   ├── Data
+│   ├── Repositories
+│   └── Migrations
+│
 └── Controle_Financeiro.Shared
-```
-
----
-
-Funcionalidades
-
-Transações
-
-- Criar transações
-- Listar todas as transações
-- Buscar transação por ID
-- Atualizar transações
-- Excluir transações
-
-Categorias
-
-- Associação entre transação e categoria
-- Validação de categoria existente
-
----
-
-Endpoints
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | `/api/transacoes` | Lista todas as transações |
-| GET | `/api/transacoes/{id}` | Busca uma transação pelo ID |
-| POST | `/api/transacoes` | Cadastra uma nova transação |
-| PUT | `/api/transacoes/{id}` | Atualiza uma transação |
-| DELETE | `/api/transacoes/{id}` | Remove uma transação |
-
----
-
-Como executar
-
-Clone o repositório:
-
-```bash
-git clone <URL_DO_REPOSITORIO>
-```
-
-Entre na pasta do projeto:
-
-```bash
-cd backend
-```
-
-Execute:
-
-```bash
-dotnet restore
-dotnet run
-```
-
-Depois acesse o Swagger pelo navegador.
-
----
-
-Desenvolvido por
-
-**Jeimili Siqueira**
-
-GitHub: https://github.com/JeiSiqueira
+    └── Responses
