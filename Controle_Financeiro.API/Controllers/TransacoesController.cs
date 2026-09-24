@@ -87,7 +87,7 @@ public class TransacoesController : ControllerBase
 
     // PUT: api/transacoes/1
     [HttpPut]
-    public async Task<IActionResult> Update(UpdateTransacaoDto dto)
+    public async Task<IActionResult> Update(int id, UpdateTransacaoDto dto)
     {
         if (dto.Id <= 0)
         {
@@ -95,6 +95,15 @@ public class TransacoesController : ControllerBase
             {
                 success = false,
                 message = "Id da transação inválido."
+            });
+        }
+
+        if (id != dto.Id)
+        {
+            return BadRequest(new
+            {
+                success = false,
+                message = "O Id da rota não corresponde ao Id da transação."
             });
         }
 

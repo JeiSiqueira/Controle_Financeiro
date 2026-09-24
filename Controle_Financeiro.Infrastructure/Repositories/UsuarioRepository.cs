@@ -7,11 +7,10 @@ namespace Controle_Financeiro.Infrastructure.Repositories;
 
 public class UsuarioRepository : Repository<Usuario>, IUsuarioRepository
 {
-    private readonly AppDbContext _context;
+    
 
     public UsuarioRepository(AppDbContext context) : base(context)
     {
-        _context = context;
     }
 
     public async Task<Usuario?> GetByEmailAsync(string email)
@@ -20,7 +19,7 @@ public class UsuarioRepository : Repository<Usuario>, IUsuarioRepository
             .FirstOrDefaultAsync(u => u.Email == email);
     }
 
-    public async Task AddAsync(Usuario usuario)
+    public new async Task AddAsync(Usuario usuario)
     {
         await _context.Usuarios.AddAsync(usuario);
         await _context.SaveChangesAsync();

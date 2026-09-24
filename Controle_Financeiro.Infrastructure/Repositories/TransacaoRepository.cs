@@ -7,22 +7,17 @@ namespace Controle_Financeiro.Infrastructure.Repositories;
 
 public class TransacaoRepository : Repository<Transacao>, ITransacaoRepository
 {
-    private readonly AppDbContext _context;
-
     public TransacaoRepository(AppDbContext context)
         : base(context)
     {
-        _context = context;
     }
 
-
-    public async Task<IEnumerable<Transacao>> GetAllAsync()
+    public new async Task<IEnumerable<Transacao>> GetAllAsync()
     {
         return await _context.Transacoes
             .Include(t => t.Categoria)
             .ToListAsync();
     }
-
 
     public async Task<IEnumerable<Transacao>> GetAllByUsuarioAsync(int usuarioId)
     {
@@ -32,12 +27,10 @@ public class TransacaoRepository : Repository<Transacao>, ITransacaoRepository
             .ToListAsync();
     }
 
-
-    public async Task<Transacao?> GetByIdAsync(int id)
+    public new async Task<Transacao?> GetByIdAsync(int id)
     {
         return await _context.Transacoes
             .Include(t => t.Categoria)
             .FirstOrDefaultAsync(t => t.Id == id);
     }
-
 }

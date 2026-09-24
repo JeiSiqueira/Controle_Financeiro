@@ -46,10 +46,19 @@ public class AuthController : ControllerBase
     [HttpGet("me")]
     public IActionResult Me()
     {
-        return Ok(User.Claims.Select(c => new
+        var nome = User.FindFirst(ClaimTypes.Name)?.Value;
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        var id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+        return Ok(new
         {
-            c.Type,
-            c.Value
-        }));
+            success = true,
+            data = new
+            {
+                id,
+                nome,
+                email
+            }
+        });
     }
 }

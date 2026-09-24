@@ -62,7 +62,7 @@ A aplicação possui autenticação de usuários utilizando JWT e integração e
 
 O backend foi organizado em camadas para separar as responsabilidades da aplicação.
 
-text
+```text
 backend/
 │
 ├── Controle_Financeiro.API
@@ -86,3 +86,20 @@ backend/
 │
 └── Controle_Financeiro.Shared
     └── Responses
+```
+
+## Como executar
+
+### Pré-requisitos
+
+- .NET 8 SDK
+- Node.js
+- MySQL
+- Git
+
+### Backend
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/JeiSiqueira/Controle_Financeiro.git

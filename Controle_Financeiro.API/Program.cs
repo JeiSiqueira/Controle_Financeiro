@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi;
-using Controle_Financeiro.Application.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -77,9 +76,6 @@ builder.Services.AddAuthentication(options =>
 });
 builder.Services.AddHttpContextAccessor();
 
-builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
-
-
 builder.Services.AddScoped<ITransacaoRepository, TransacaoRepository>();
 builder.Services.AddScoped<ITransacaoService, TransacaoService>();
 
@@ -95,10 +91,11 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 
-builder.Services.AddHttpContextAccessor();
-
 builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
+builder.Services.AddScoped<IRelatorioService, RelatorioService>();
+
+builder.Services.AddScoped<RelatorioExcelService>();
 
 
 builder.Services.AddDbContext<AppDbContext>(options =>
