@@ -85,8 +85,7 @@ public class TransacoesController : ControllerBase
     }
 
 
-    // PUT: api/transacoes/1
-    [HttpPut]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, UpdateTransacaoDto dto)
     {
         if (dto.Id <= 0)
